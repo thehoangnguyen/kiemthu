@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int thu1, day, thu2;
+    cin >> thu1 >> day;
+    if (thu1 <= 0 || thu1 > 7 || day <=0 || day >31) cout << "ERROR";
+    else {
+        if (1<= day && 7 >= day){
+            thu2 = thu1 + day -1;
+        }
+        else if (8<= day && 14 >= day) thu2 = thu1 + day - 8;
+        else if (15<= day && 21 >= day) thu2 = thu1 + day - 15;
+        else if (22<= day && 28 >= day) thu2 = thu1 + day - 22;
+        else thu2 = thu1 + day - 29;
+        //if (thu2 > 7) thu2 = thu2 - 7;
+        cout << thu2;
+    }
+    return 0;
+}
