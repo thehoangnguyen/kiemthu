@@ -1,0 +1,37 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+void giaiPTbac2 (float a, float b, float c) {
+    if (a==0) {
+        if (b==0) {
+            if (c==0) cout << "PT vo nghiem";
+            else cout << "PT co vo so nghiem";
+        }
+        else cout << "PT co 1 nghiem la: " << -c/b;
+        return;
+    }
+    else {
+        float delta = b*b - 4*a*c;
+        float x1;
+        float x2;
+        if (delta < 0) cout << "PT vo nghiem";
+        if (delta ==0) {
+            x1 = (-b / (2 * a));
+            cout << "PT co nghiem kep la: " << x1;
+        }
+        if (delta > 0) {
+            x1 = (float) ((-b + sqrt(delta)) / (2*a));
+            x2 = (float) ((-b - sqrt(delta)) / (2*a));
+            cout << "PT co 2 nghiem la: x1= " << x1 << "; x2= " << x2;
+        }
+        return;
+    }
+}
+int main () {
+    float a,b,c;
+    cin >>a>>b>>c;
+    giaiPTbac2(a,b,c);
+    return 0;
+}
